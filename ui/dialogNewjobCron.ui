@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogNewjobCron</class>
+ <widget class="QDialog" name="DialogNewjobCron">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>485</width>
+    <height>353</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>创建Cron类型作业</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBoxJobFile">
+     <property name="title">
+      <string>作业脚本文件</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayoutJobFile"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxCondition">
+     <property name="title">
+      <string>作业条件</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_1">
+            <property name="text">
+             <string>Year</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditYear">
+            <property name="toolTip">
+             <string>“年”条件（语法请参考“这是什么”）</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a: 表示a年&lt;/p&gt;&lt;p&gt;*: 表示所有年份&lt;/p&gt;&lt;p&gt;*/a: 表示所有年份中每过a年一次&lt;/p&gt;&lt;p&gt;a-b: 表示从a年到b年&lt;/p&gt;&lt;p&gt;a-b/c: 表示从a年到b年中每过c年一次&lt;/p&gt;&lt;p&gt;x,y,z,...: 表示多种满足条件的年份，逗号分开的每个条件都可以是以上表达式之一&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Month</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditMonth">
+            <property name="toolTip">
+             <string>“月”条件（语法请参考“这是什么”）</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a: 表示a月，取值为1至12&lt;/p&gt;&lt;p&gt;*: 表示所有月份&lt;/p&gt;&lt;p&gt;*/a: 表示所有月份中每过a月一次&lt;/p&gt;&lt;p&gt;a-b: 表示从a月到b月&lt;/p&gt;&lt;p&gt;a-b/c: 表示从a月到b月中每过c月一次&lt;/p&gt;&lt;p&gt;x,y,z,...: 表示多种满足条件的月份，逗号分开的每个条件都可以是以上表达式之一&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Day</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditDay">
+            <property name="toolTip">
+             <string>“日”条件（语法请参考“这是什么”）</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a: 表示a日，取值为1至31&lt;/p&gt;&lt;p&gt;*: 表示所有日期&lt;/p&gt;&lt;p&gt;*/a: 表示所有日期中每过a天一次&lt;/p&gt;&lt;p&gt;a-b: 表示从a日到b日&lt;/p&gt;&lt;p&gt;a-b/c: 表示从a日到b日中每过c日一次&lt;/p&gt;&lt;p&gt;xrd y: 表示本月中第x个星期y，y取值为sun,mon,tue,wed,thu,fri,sat&lt;/p&gt;&lt;p&gt;last: 表示本月的最后一天&lt;/p&gt;&lt;p&gt;last x: 表示本月最后一个星期x，x取值为sun,mon,tue,wed,thu,fri,sat&lt;/p&gt;&lt;p&gt;x,y,z,...: 表示多种满足条件的日期，逗号分开的每个条件都可以是以上表达式之一&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Week</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditWeek">
+            <property name="toolTip">
+             <string>“周”条件（语法请参考“这是什么”）</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a: 表示第a周，取值为1至53&lt;/p&gt;&lt;p&gt;*: 表示所有周&lt;/p&gt;&lt;p&gt;*/a: 表示所有周中每过a周一次&lt;/p&gt;&lt;p&gt;a-b: 表示从a周到b周&lt;/p&gt;&lt;p&gt;a-b/c: 表示从a周到b周中每过c周一次&lt;/p&gt;&lt;p&gt;x,y,z,...: 表示多种满足条件的周，逗号分开的每个条件都可以是以上表达式之一&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="labelDayOfWeek">
+            <property name="text">
+             <string>Day of week</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditDayOfWeek">
+            <property name="toolTip">
+             <string>“天（周内）”条件（语法请参考“这是什么”）</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a: 表示星期a，取值为0至6或者sun,mon,tue,wed,thu,fri,sat&lt;/p&gt;&lt;p&gt;*: 表示每周内所有的天&lt;/p&gt;&lt;p&gt;*/a: 表示周中每过a天一次&lt;/p&gt;&lt;p&gt;a-b: 表示从星期a到星期b&lt;/p&gt;&lt;p&gt;a-b/c: 表示从星期a到星期b中每过c天一次&lt;/p&gt;&lt;p&gt;x,y,z,...: 表示多种满足条件的天，逗号分开的每个条件都可以是以上表达式之一&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Hour</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditHour">
+            <property name="toolTip">
+             <string>“小时”条件（语法请参考“这是什么”）</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a: 表示a点，取值为0至23&lt;/p&gt;&lt;p&gt;*: 表示每个小时&lt;/p&gt;&lt;p&gt;*/a: 表示每过a小时一次&lt;/p&gt;&lt;p&gt;a-b: 表示从a点到b点&lt;/p&gt;&lt;p&gt;a-b/c: 表示从a点到b点中每过c小时一次&lt;/p&gt;&lt;p&gt;x,y,z,...: 表示多种满足条件的小时，逗号分开的每个条件都可以是以上表达式之一&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Minute</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditMinute">
+            <property name="toolTip">
+             <string>“分钟”条件（语法请参考“这是什么”）</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a: 表示a分，取值为0至59&lt;/p&gt;&lt;p&gt;*: 表示每分钟&lt;/p&gt;&lt;p&gt;*/a: 表示每过a分钟一次&lt;/p&gt;&lt;p&gt;a-b: 表示从a分到b分&lt;/p&gt;&lt;p&gt;a-b/c: 表示从a分到b分中每过c分钟一次&lt;/p&gt;&lt;p&gt;x,y,z,...: 表示多种满足条件的分钟，逗号分开的每个条件都可以是以上表达式之一&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Second</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditSecond">
+            <property name="toolTip">
+             <string>“秒”条件（语法请参考“这是什么”）</string>
+            </property>
+            <property name="whatsThis">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a: 表示a秒，取值为0至59&lt;/p&gt;&lt;p&gt;*: 表示每秒钟&lt;/p&gt;&lt;p&gt;*/a: 表示每过a秒钟一次&lt;/p&gt;&lt;p&gt;a-b: 表示从a秒到b秒&lt;/p&gt;&lt;p&gt;a-b/c: 表示从a秒到b秒中每过c秒一次&lt;/p&gt;&lt;p&gt;x,y,z,...: 表示多种满足条件的秒，逗号分开的每个条件都可以是以上表达式之一&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_13">
+        <item>
+         <widget class="QCheckBox" name="checkBoxStartDate">
+          <property name="toolTip">
+           <string>是否使用“起始时间”条件</string>
+          </property>
+          <property name="text">
+           <string>Start Date</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateTimeEdit" name="dateTimeEditStartDate">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="toolTip">
+           <string>“起始时间”条件</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
