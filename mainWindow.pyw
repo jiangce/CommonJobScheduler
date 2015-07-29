@@ -71,11 +71,11 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
         self.actionDeleteJob.setEnabled(not status[1])
 
     def getServiceStatus(self):
-        '''
+        """
         return a tuple (flag1, flag2)
         flag1: whether the service is installed
         flag2: whether the service is running
-        '''
+        """
         SERVICE_RUNNING = 0x4
         try:
             status = win32serviceutil.QueryServiceStatus(
