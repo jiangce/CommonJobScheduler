@@ -1,19 +1,23 @@
 # -*- coding: utf-8 -*-
 
-import time, os, sys, win32serviceutil
-from cjsService import CommonJobSchedulerService
+import time
+import os
+import sys
+
+import win32serviceutil
+
+from job_service.cjsService import CommonJobSchedulerService
 
 
 def getServiceStatus():
-    '''
+    """
     return a tuple (flag1, flag2)
     flag1: whether the service is installed
     flag2: whether the service is running
-    '''
+    """
     SERVICE_RUNNING = 0x4
     try:
-        status = win32serviceutil.QueryServiceStatus(
-            CommonJobSchedulerService._svc_name_)
+        status = win32serviceutil.QueryServiceStatus(CommonJobSchedulerService._svc_name_)
         return (True, status[1] == SERVICE_RUNNING)
     except:
         return (False, False)
@@ -31,19 +35,19 @@ def stopService():
 
 
 def startService2():
-   if getServiceStatus()[1]:
-      return True
-   os.system('sc start CommonJobSchedulerService')
-   time.sleep(1)
-   return getServiceStatus()[1]
+    if getServiceStatus()[1]:
+        return True
+    os.system('sc start CommonJobSchedulerService')
+    time.sleep(1)
+    return getServiceStatus()[1]
 
 
 def stopService2():
-   if not getServiceStatus()[1]:
-      return True
-   os.system('sc stop CommonJobSchedulerService')
-   time.sleep(1)
-   return getServiceStatus()[1]
+    if not getServiceStatus()[1]:
+        return True
+    os.system('sc stop CommonJobSchedulerService')
+    time.sleep(1)
+    return getServiceStatus()[1]
 
 
 def restart():
@@ -61,7 +65,7 @@ def start():
 def stop():
     while not stopService():
         time.sleep(1)
-    
+
 
 if __name__ == '__main__':
     if len(sys.argv) <= 1 or sys.argv[1] == 'restart':

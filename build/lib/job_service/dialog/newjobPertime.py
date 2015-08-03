@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from PyQt5 import QtWidgets
-from jobmanager import JobPerTime
-from ui import Ui_DialogNewjobPerTime
-from dialog.widgetJobfile import WidgetJobFile
+from job_service.dialog.widgetJobfile import WidgetJobFile
+from ..jobmanager import JobPerTime
+from ..ui.uiDialogNewjobPertime import Ui_DialogNewjobPerTime
 
 
 class DialogNewJobPerTime(Ui_DialogNewjobPerTime, QtWidgets.QDialog):

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from PyQt5 import QtWidgets
-from ui import Ui_DialogLog
 import os
+from PyQt5 import QtWidgets
+from job_service.ui import Ui_DialogLog
 
 
 class DialogLog(Ui_DialogLog, QtWidgets.QDialog):
@@ -23,8 +23,8 @@ class DialogLog(Ui_DialogLog, QtWidgets.QDialog):
 
     def onClearButtonClick(self):
         if QtWidgets.QMessageBox.question(self, '注意', '是否要清空日志文件',
-                                      buttons=QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
-                                      defaultButton=QtWidgets.QMessageBox.No) \
+                                          buttons=QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
+                                          defaultButton=QtWidgets.QMessageBox.No) \
                 == QtWidgets.QMessageBox.Yes:
             with open(self.logfile, 'w'):
                 pass

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from PyQt5 import QtWidgets
-from jobmanager import JobOnTime
-from ui import Ui_DialogNewjobOntime
-from dialog.widgetJobfile import WidgetJobFile
-from datetime import datetime
 import time
+from datetime import datetime
+from PyQt5 import QtWidgets
+from job_service.dialog.widgetJobfile import WidgetJobFile
+from ..jobmanager import JobOnTime
+from ..ui.uiDialogNewjobOntime import Ui_DialogNewjobOntime
 
 
 class DialogNewJobOnTime(Ui_DialogNewjobOntime, QtWidgets.QDialog):

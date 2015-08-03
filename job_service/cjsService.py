@@ -4,10 +4,12 @@ import os
 import logging
 import win32service
 import win32event
-import win32serviceutil
 import traceback
 from logging.handlers import TimedRotatingFileHandler
-from jobmanager import loadJobs, getScheduler
+
+import win32serviceutil
+
+from job_service.jobmanager import loadJobs, getScheduler
 
 ROOT_PATH = os.path.dirname(__file__)
 LOG_PATH = os.path.abspath(os.path.join(ROOT_PATH, 'log'))

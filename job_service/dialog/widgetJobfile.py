@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from ui import Ui_WidgetJobFile
 from PyQt5 import QtWidgets
+from ..ui.uiWidgetJobfile import Ui_WidgetJobFile
 
 
 class WidgetJobFile(Ui_WidgetJobFile, QtWidgets.QWidget):
@@ -14,7 +14,6 @@ class WidgetJobFile(Ui_WidgetJobFile, QtWidgets.QWidget):
         file = QtWidgets.QFileDialog().getOpenFileName(self, '选择文件')[0]
         if file:
             self.lineEditFileName.setText(file)
-
 
     def checkInput(self):
         self.jobName = self.lineEditJobName.text().strip()

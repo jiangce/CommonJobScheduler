@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from ui import Ui_DialogNewjobOnstart
-from dialog.widgetJobfile import WidgetJobFile
 from PyQt5 import QtWidgets
-from jobmanager import JobOnStart
+from job_service.dialog.widgetJobfile import WidgetJobFile
+from ..jobmanager import JobPerTime
+from ..ui.uiDialogNewjobPertime import Ui_DialogNewjobPerTime
 
 
-class DialogNewJobOnStart(Ui_DialogNewjobOnstart, QtWidgets.QDialog):
+class DialogNewJobPerTime(Ui_DialogNewjobPerTime, QtWidgets.QDialog):
     def __init__(self, parent=None):
-        super(DialogNewJobOnStart, self).__init__(parent)
+        super(DialogNewJobPerTime, self).__init__(parent)
         self.setupUi(self)
         self.jobFileWidget = WidgetJobFile()
         self.gridLayoutJobFile.addWidget(self.jobFileWidget)
@@ -18,7 +18,7 @@ class DialogNewJobOnStart(Ui_DialogNewjobOnstart, QtWidgets.QDialog):
     def onAccepted(self):
         result = self.jobFileWidget.checkInput()
         if result[0]:
-            self.job = JobOnStart(self.jobFileWidget.jobName,
+            self.job = JobPerTime(self.jobFileWidget.jobName,
                                   self.jobFileWidget.fileName,
                                   self.jobFileWidget.methodName,
                                   eval(self.jobFileWidget.params),

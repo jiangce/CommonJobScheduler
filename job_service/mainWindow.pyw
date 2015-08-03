@@ -1,19 +1,18 @@
 # -*- coding: utf-8 -*-
 
-import sys
 import os
 import time
 import datetime
 import win32serviceutil
-from ui import Ui_MainWindow
-from cjsService import CommonJobSchedulerService
-from dialog.newjobOnstart import DialogNewJobOnStart
-from dialog.newjobOntime import DialogNewJobOnTime
-from dialog.newjobPertime import DialogNewJobPerTime
-from dialog.newjobCron import DialogNewJobCron
-from dialog.log import DialogLog
-from jobmanager import loadJobs, saveJobs
 from PyQt5 import QtWidgets
+from .ui.uiMainWindow import Ui_MainWindow
+from .cjsService import CommonJobSchedulerService
+from .dialog.newjobOnstart import DialogNewJobOnStart
+from .dialog.newjobOntime import DialogNewJobOnTime
+from .dialog.newjobPertime import DialogNewJobPerTime
+from .dialog.newjobCron import DialogNewJobCron
+from .dialog.log import DialogLog
+from .jobmanager import loadJobs, saveJobs
 
 LOG_FILE = os.path.join(os.path.dirname(__file__), 'log', 'log.txt')
 JOB_FILE = os.path.join(os.path.dirname(__file__), 'jobs.dat')
@@ -167,10 +166,3 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
     def checkLog(self):
         dialog = DialogLog(LOG_FILE, self)
         dialog.exec_()
-
-
-if __name__ == '__main__':
-    app = QtWidgets.QApplication(sys.argv)
-    mf = MainWindow()
-    mf.show()
-    app.exec_()

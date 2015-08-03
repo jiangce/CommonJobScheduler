@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from PyQt5 import QtWidgets
-from jobmanager import JobCron, Cron
-from ui import Ui_DialogNewjobCron
-from dialog.widgetJobfile import WidgetJobFile
 from datetime import datetime
+from PyQt5 import QtWidgets
+from job_service.dialog.widgetJobfile import WidgetJobFile
+from ..jobmanager import JobCron, Cron
+from ..ui.uiDialogNewjobCron import Ui_DialogNewjobCron
 
 
 class DialogNewJobCron(Ui_DialogNewjobCron, QtWidgets.QDialog):
