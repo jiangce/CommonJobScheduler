@@ -1,6 +1,8 @@
 setup.py
 job_service/__init__.py
+job_service/__main__.py
 job_service/cjsService.py
+job_service/mainWindow.py
 job_service/sv.py
 job_service/test.py
 job_service.egg-info/PKG-INFO

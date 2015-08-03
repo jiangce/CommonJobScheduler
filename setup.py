@@ -15,8 +15,11 @@ setup(
         #     'foo = my_package.some_module:main_func',
         #     'bar = other_module:some_func',
         # ],
-        'gui_scripts': [
-            'jsw = job_service:start_window',
+        # 'gui_scripts': [
+        #     'jsw = job_service:start_window',
+        # ]
+        'console_scripts': [
+            'jsw = job_service:main',
         ]
     }
 )
