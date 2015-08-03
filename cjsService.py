@@ -10,7 +10,7 @@ from logging.handlers import TimedRotatingFileHandler
 from jobmanager import loadJobs, getScheduler
 
 ROOT_PATH = os.path.dirname(__file__)
-LOG_PATH = os.path.abspath(os.path.join(ROOT_PATH, '..', 'log'))
+LOG_PATH = os.path.abspath(os.path.join(ROOT_PATH, 'log'))
 JOB_FILE = os.path.join(ROOT_PATH, 'jobs.dat')
 LOG_FILE = os.path.join(LOG_PATH, 'log.txt')
 LOG_NAME = 'apscheduler.scheduler'
@@ -22,7 +22,7 @@ def get_logger():
     logger = logging.getLogger(LOG_NAME)
     if not logger.handlers:
         logger.setLevel(logging.INFO)
-        log_handler = TimedRotatingFileHandler(LOG_FILE, when='d', interval=1, backupCount=7)
+        log_handler = TimedRotatingFileHandler(LOG_FILE, when='h', interval=1, backupCount=48)
         log_formater_str = '%(asctime)s\n[%(levelname)s][%(module)s][PID: %(process)d][TID: %(thread)d] - %(message)s'
         log_formater = logging.Formatter(log_formater_str)
         log_handler.setFormatter(log_formater)

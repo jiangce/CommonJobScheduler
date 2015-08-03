@@ -13,9 +13,9 @@ def createJobByString(s):
       job = JobOnStart(None, None, None, None, None)
    elif param['type'] == TYPE_JOB_ON_TIME:
       job = JobOnTime(None, None, None, None, None)
-   elif param['type'] == TYPE_JOBPERTIME:
+   elif param['type'] == TYPE_JOB_PER_TIME:
       job = JobPerTime(None, None, None, None, None)
-   elif param['type'] == TYPE_JOBCRON:
+   elif param['type'] == TYPE_JOB_CRON:
       job = JobCron(None, None, None, None, None)
    if job:
       job.loadFromString(s)

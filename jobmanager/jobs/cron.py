@@ -44,7 +44,7 @@ class Cron:
 
         sche = BackgroundScheduler()
         try:
-            sche.add_cron_job(fun, **self.toDictByDateTime())
+            sche.add_job(fun, trigger='cron', **self.toDictByDateTime())
             return True
         except:
             return False

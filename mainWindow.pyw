@@ -5,7 +5,6 @@ import os
 import time
 import datetime
 import win32serviceutil
-
 from ui import Ui_MainWindow
 from cjsService import CommonJobSchedulerService
 from dialog.newjobOnstart import DialogNewJobOnStart
@@ -16,7 +15,7 @@ from dialog.log import DialogLog
 from jobmanager import loadJobs, saveJobs
 from PyQt5 import QtWidgets
 
-LOG_FILE = os.path.join(os.path.dirname(__file__), '..', 'log', 'log.txt')
+LOG_FILE = os.path.join(os.path.dirname(__file__), 'log', 'log.txt')
 JOB_FILE = os.path.join(os.path.dirname(__file__), 'jobs.dat')
 
 
