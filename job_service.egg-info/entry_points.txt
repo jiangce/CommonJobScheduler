@@ -1,3 +1,0 @@
-[console_scripts]
-jsw = job_service:main
-
