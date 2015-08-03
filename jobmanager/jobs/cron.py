@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from apscheduler.scheduler import Scheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 import time
 
 
-class Cron(object):
+class Cron:
     def __init__(self, year=None, month=None, day=None, week=None,
                  day_of_week=None, hour=None, minute=None, second=None,
                  start_date=None):
@@ -42,7 +42,7 @@ class Cron(object):
         def fun():
             pass
 
-        sche = Scheduler()
+        sche = BackgroundScheduler()
         try:
             sche.add_cron_job(fun, **self.toDictByDateTime())
             return True

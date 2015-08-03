@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from .jobbase import JobBase
-from ._base import TYPE_JOBCRON
+from ._base import TYPE_JOB_CRON
 from .cron import Cron
 
 
 class JobCron(JobBase):
     def __init__(self, name, pyfile, method, params=None, cron=None):
         super(JobCron, self).__init__(name, pyfile, method, params)
-        self.param['type'] = TYPE_JOBCRON
-        if cron == None:
+        self.param['type'] = TYPE_JOB_CRON
+        if cron is None:
             cron = Cron()
         if isinstance(cron, dict):
             cron = Cron(**cron)
@@ -25,4 +25,4 @@ class JobCron(JobBase):
 
     def addToScheduler(self, sche):
         cron = Cron(**self.param['cron'])
-        sche.add_cron_job(self._getMethod(), args=self.params, **cron.toDictByDateTime())
+        sche.add_job(self._getMethod(), args=self.params, trigger='cron', **cron.toDictByDateTime())

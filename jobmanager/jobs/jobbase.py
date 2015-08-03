@@ -6,11 +6,9 @@ import os
 import sys
 
 
-class JobBase(object):
-    __metaclass__ = abc.ABCMeta
-
+class JobBase(metaclass=abc.ABCMeta):
     def __init__(self, name, pyfile, method, params=None):
-        if params == None:
+        if params is None:
             params = []
         self.param = {'name': name,
                       'pyfile': pyfile,

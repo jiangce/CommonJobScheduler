@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .jobs import *
-from apscheduler.scheduler import Scheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 import json
 import os
 
@@ -9,9 +9,9 @@ import os
 def createJobByString(s):
    param = json.loads(s)
    job = None
-   if param['type'] == TYPE_JOBONSTART:
+   if param['type'] == TYPE_JOB_ON_START:
       job = JobOnStart(None, None, None, None, None)
-   elif param['type'] == TYPE_JOBONTIME:
+   elif param['type'] == TYPE_JOB_ON_TIME:
       job = JobOnTime(None, None, None, None, None)
    elif param['type'] == TYPE_JOBPERTIME:
       job = JobPerTime(None, None, None, None, None)
@@ -35,7 +35,7 @@ def saveJobs(jobs, jobStoreFile):
 
 
 def getScheduler(jobs):
-   sche = Scheduler()
+   sche = BackgroundScheduler()
    for job in jobs:
       job.addToScheduler(sche)
    return sche

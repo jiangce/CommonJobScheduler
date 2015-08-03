@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .jobbase import JobBase
-from ._base import TYPE_JOBONTIME
+from ._base import TYPE_JOB_ON_TIME
 from datetime import datetime
 import time
 
@@ -9,7 +9,7 @@ import time
 class JobOnTime(JobBase):
     def __init__(self, name, pyfile, method, params=None, time=time.time()):
         super(JobOnTime, self).__init__(name, pyfile, method, params)
-        self.param['type'] = TYPE_JOBONTIME
+        self.param['type'] = TYPE_JOB_ON_TIME
         self.param['time'] = time
 
     @property
@@ -22,4 +22,5 @@ class JobOnTime(JobBase):
                (super(JobOnTime, self).__str__(), t[0], t[1], t[2], t[3], t[4], t[5])
 
     def addToScheduler(self, sche):
-        sche.add_date_job(self._getMethod(), datetime.fromtimestamp(self.time), args=self.params)
+        sche.add_job(self._getMethod(), args=self.params, trigger='date',
+                     run_date=datetime.fromtimestamp(self.time))

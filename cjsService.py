@@ -34,9 +34,9 @@ log = get_logger()
 
 
 class CommonJobSchedulerService(win32serviceutil.ServiceFramework):
-    '''
+    """
     传送文件的windows服务类
-    '''
+    """
     _svc_name_ = 'CommonJobSchedulerService'
     _svc_display_name_ = 'Common Job Scheduler Service'
     _svc_description_ = '通用作业调度服务'
@@ -47,9 +47,9 @@ class CommonJobSchedulerService(win32serviceutil.ServiceFramework):
         log.info('Service Init')
 
     def SvcStop(self):
-        '''
+        """
         当服务停止时调用
-        '''
+        """
         log.info('Service Stoping')
         self.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)
         win32event.SetEvent(self.hWaitStop)
