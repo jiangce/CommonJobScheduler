@@ -1,6 +1,0 @@
-# -*- coding: utf-8 -*-
-
-TYPE_JOB_ON_START = 1
-TYPE_JOB_ON_TIME = 2
-TYPE_JOB_PER_TIME = 3
-TYPE_JOB_CRON = 4

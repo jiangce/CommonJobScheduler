@@ -45,3 +45,6 @@ Temporary Items
 .idea/*
 jobs.dat
 log/*
+build/*
+dist/*
+job_service.egg-info/*
