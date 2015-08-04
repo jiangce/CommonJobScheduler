@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from setuptools import setup, find_packages
 from job_service import version
 
@@ -10,5 +11,5 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=['apscheduler'],
-    entry_points={'gui_scripts': ['jsw = job_service:main', ]}
+    entry_points={'gui_scripts': ['jsw = job_service:main']}
 )

@@ -14,8 +14,10 @@ from .dialog.newjobCron import DialogNewJobCron
 from .dialog.log import DialogLog
 from .jobmanager import loadJobs, saveJobs
 
-LOG_FILE = os.path.join(os.path.dirname(__file__), 'log', 'log.txt')
-JOB_FILE = os.path.join(os.path.dirname(__file__), 'jobs.dat')
+PATH = os.path.dirname(__file__)
+SERVICE_FILE = os.path.join(PATH, 'cjsService.py')
+LOG_FILE = os.path.join(PATH, 'log', 'log.txt')
+JOB_FILE = os.path.join(PATH, 'jobs.dat')
 
 
 class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
@@ -83,7 +85,9 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
             return (False, False)
 
     def installService(self):
-        os.system('cjsService.py --startup auto install')
+        cmd = '%s --startup auto install' % SERVICE_FILE
+        self.setMessage(cmd, '#000099')
+        os.system(cmd)
         self.setStatusBarByService()
         if self.getServiceStatus()[0]:
             self.setMessage('服务安装成功', '#009900')
@@ -91,7 +95,9 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
             self.setMessage('服务安装失败', '#990000')
 
     def uninstallService(self):
-        os.system('cjsService.py remove')
+        cmd = '%s remove' % SERVICE_FILE
+        self.setMessage(cmd, '#000099')
+        os.system(cmd)
         self.setStatusBarByService()
         if not self.getServiceStatus()[0]:
             self.setMessage('服务卸载成功', '#009900')
@@ -99,7 +105,9 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
             self.setMessage('服务卸载失败', '#CC0000')
 
     def startService(self):
-        os.system('cjsService.py start')
+        cmd = '%s start' % SERVICE_FILE
+        self.setMessage(cmd, '#000099')
+        os.system(cmd)
         time.sleep(1)
         self.setStatusBarByService()
         if self.getServiceStatus()[1]:
@@ -108,7 +116,9 @@ class MainWindow(Ui_MainWindow, QtWidgets.QMainWindow):
             self.setMessage('服务启动失败', '#990000')
 
     def stopService(self):
-        os.system('cjsService.py stop')
+        cmd = '%s stop' % SERVICE_FILE
+        self.setMessage(cmd, '#000099')
+        os.system(cmd)
         self.setStatusBarByService()
         if not self.getServiceStatus()[1]:
             self.setMessage('服务中止成功', '#009900')
